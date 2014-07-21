@@ -1,0 +1,22 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#pragma mark - SystemVersion
+#define DEVICE_SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+#define NSVersionNumber_iOS_5_0 (DEVICE_SYSTEM_VERSION >= 5.0)
+#define NSVersionNumber_iOS_6_0 (DEVICE_SYSTEM_VERSION >= 6.0)
+#define NSVersionNumber_iOS_7_0 (DEVICE_SYSTEM_VERSION >= 7.0)
